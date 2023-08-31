@@ -1,4 +1,4 @@
-export async function productList() {
+async function productList() {
   try {
       const response = await fetch('https://fakestoreapi.com/products');
       const products = await response.json();
@@ -9,3 +9,8 @@ export async function productList() {
       return [];
   }
 }
+
+const PRODUCTS = await productList();
+
+export { productList , PRODUCTS }
+
