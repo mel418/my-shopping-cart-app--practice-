@@ -4,7 +4,7 @@ import {Navbar} from "./components/navbar";
 import { Shop } from './pages/shop/shop'
 import { Cart } from './pages/cart/cart'
 import { ShoppingBag } from 'phosphor-react';
-import { ShopContextProvider } from './context/shop-contex';
+import { ShopContextProvider } from './context/shop-context';
 
 function App() {
   return (

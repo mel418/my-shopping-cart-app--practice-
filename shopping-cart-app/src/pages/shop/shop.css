@@ -3,13 +3,18 @@
     text-align: center;
     font-size: 40px;
   }
+
+.container {
+  padding: 0 50px 0 50px;
+}
+
   .products {
     width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
-    gap: 20px;
+    gap: 3vh;
     justify-items: center;
   }
 
@@ -27,7 +32,7 @@
   
   .product {
     border-radius: 15px;
-    width: 350px;
+    width: 100%;
     height: auto;
     margin: 50px;
     display: flex;
