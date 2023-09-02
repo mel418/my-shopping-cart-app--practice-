@@ -1,8 +1,10 @@
-import React from "react";
-import {ShopContext} from "../../context/shop-context"
+import React, { useContext } from "react";
+import {ShopContext} from "../../context/shop-context";
 
 export const CartItem = (props) => {
     const { id, title, price, image } = props.data;
+    const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext);
+    
     const roundedPrice = price.toFixed(2);
 
     return (
@@ -12,7 +14,14 @@ export const CartItem = (props) => {
                 <p>
                     <b>{title}</b>
                 </p>
-                <p> ${roundedPrice}</p>
+                <p> Price: ${roundedPrice}</p>
+                <div className="countHandler">
+                    <button onClick={() => removeFromCart(id)}> - </button>
+                    <input value={cartItems[id]} 
+                    onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
+                    />
+                    <button onClick={() => addToCart(id)}> + </button>
+                </div>
             </div>
         </div>
     );
